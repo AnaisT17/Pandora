@@ -1,0 +1,40 @@
+package fr.seedle.pandora.singleton;
+
+import java.sql.SQLException;
+
+import fr.seedle.pandora.data.Datas;
+
+public class DataSingleton {
+
+	private static DataSingleton datasSingleton;
+
+	private Datas datas;
+
+	public static DataSingleton getInstance() {
+		if (datasSingleton == null) {
+			try {
+				datasSingleton = new DataSingleton();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return datasSingleton;
+	}
+
+	public DataSingleton() throws SQLException {
+		datas = new Datas();
+		datas.createSequence();
+		datas.createTableMembre();
+		datas.createTableRole();
+		datas.createTableRoleMembre();
+	}
+
+	public Datas getDatas() {
+		return datas;
+	}
+
+	public void setDatas(Datas datas) {
+		this.datas = datas;
+	}
+}

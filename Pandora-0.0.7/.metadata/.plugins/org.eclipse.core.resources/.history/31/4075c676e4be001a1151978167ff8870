@@ -1,0 +1,14 @@
+package fr.seedle.pandora.interfaces;
+
+public interface Operation {
+
+	public String getNom();
+
+	public void setNom(String nom);
+	
+	public Equipe getEquipeOrganisatrice();
+	
+	public void setEquipeOrganisatrice(Equipe equipe);
+	
+	public 
+}

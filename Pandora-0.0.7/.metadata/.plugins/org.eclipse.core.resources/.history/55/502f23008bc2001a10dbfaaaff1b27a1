@@ -1,0 +1,61 @@
+package fr.seedle.pandora.bean;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.singleton.MembreSingleton;
+
+@ManagedBean(name = "loginBean")
+@SessionScoped
+public class LoginBean {
+
+	private String login;
+
+	private String password;
+
+	private MembreDto membreCourant;
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public MembreDto getMembreCourant() {
+		return membreCourant;
+	}
+
+	public void setMembreCourant(MembreDto membreCourant) {
+		this.membreCourant = membreCourant;
+	}
+
+	public String getPage() {
+		return page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+	}
+
+	public String identificationMembre() {
+		this.membreCourant = MembreSingleton.getInstance().getMembreByLogin(login);
+
+		if (this.membreCourant != null) {
+			return "mainpage";
+		}
+
+		return "loginwrongid";
+
+	}
+}

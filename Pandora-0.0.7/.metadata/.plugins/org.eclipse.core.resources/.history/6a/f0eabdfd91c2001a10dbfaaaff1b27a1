@@ -1,0 +1,26 @@
+package fr.seedle.pandora.test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import fr.seedle.pandora.bean.LoginBean;
+import fr.seedle.pandora.bean.RoleControllerListBean;
+
+public class TestInstanciationBean {
+
+	static Map<String, Object> mapBean = new HashMap<String, Object>();
+
+	public static void main(String[] args) {
+		LoginBean loginBean = new LoginBean();
+		loginBean.setLogin("test");
+		mapBean.put("loginBean", loginBean);
+
+		RoleControllerListBean roleControllerListBean = new RoleControllerListBean();
+		mapBean.put("roleControllerListBean", roleControllerListBean);
+
+		System.out.println(mapBean);
+
+		LoginBean extractLoginBean = (LoginBean) mapBean.get("loginBean");
+		System.out.println(extractLoginBean.getLogin());
+	}
+}

@@ -1,0 +1,21 @@
+package fr.seedle.pandora.dto;
+
+import java.time.LocalDateTime;
+
+import fr.seedle.pandora.interfaces.dto.DressCode;
+
+public class DressCodeDto extends PandoraObjectDto implements DressCode {
+
+	private LocalDateTime date;
+
+	/***
+	 * 
+	 * Methode de Pandora
+	 * 
+	 * @return eric 14:22:36
+	 */
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+}

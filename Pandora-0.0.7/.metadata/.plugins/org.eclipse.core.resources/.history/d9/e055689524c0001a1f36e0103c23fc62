@@ -1,0 +1,16 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import fr.seedle.pandora.dto.RoleDto;
+import fr.seedle.pandora.interfaces.dto.Role;
+
+public interface RoleDao {
+
+	public RoleDto getInstance();
+
+	public void insert(Role role);
+
+	public void update(Role role);
+
+	public void delete(Role role);
+
+}

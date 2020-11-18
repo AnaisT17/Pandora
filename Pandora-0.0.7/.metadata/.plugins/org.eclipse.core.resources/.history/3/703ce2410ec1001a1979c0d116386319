@@ -1,0 +1,90 @@
+package fr.seedle.pandora.dto;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+import fr.seedle.pandora.interfaces.dto.Operation;
+
+public class OperationDto extends PandoraObjectDto implements Operation {
+
+	private String description;
+	private LieuDto lieu;
+	private LocalDateTime dateHeureDebut;
+	private LocalDateTime dateHeureFin;
+
+	private Set<EquipeDto> listEquipeOrganisatrices;
+	private Set<FactionDto> listFactions;
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDescription(String description) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public LieuDto getLieu() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setLieu(LieuDto lieu) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public LocalDateTime getDateHeureDebut() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDateHeureDebut(LocalDateTime dateHeureDebut) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public LocalDateTime getDateHeureFin() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDateHeureFin(LocalDateTime dateHeureFin) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Set<EquipeDto> getListEquipeOrganisatrices() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setEquipeOrganisatrices(Set<EquipeDto> listEquipeOrganisatrices) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Set<FactionDto> getListFactions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setListFactions(Set<FactionDto> listFactions) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

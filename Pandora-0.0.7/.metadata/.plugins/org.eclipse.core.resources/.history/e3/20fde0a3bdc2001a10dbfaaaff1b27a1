@@ -1,0 +1,34 @@
+package fr.seedle.pandora.singleton;
+
+import fr.seedle.pandora.data.Datas;
+
+public class DataSingleton {
+
+	private static DataSingleton roleSingleton;
+
+	private Datas datas;
+
+	public static DataSingleton getInstance() {
+		if (roleSingleton == null) {
+			roleSingleton = new DataSingleton();
+		}
+		return roleSingleton;
+	}
+
+	public DataSingleton() {
+		datas = new Datas();
+		datas.createSequence();
+		datas.createTableMembre();
+		datas.createTableRole();
+		datas.createTableRoleMembre();
+	}
+
+	public Datas getDatas() {
+		return datas;
+	}
+
+	public void setDatas(Datas datas) {
+		this.datas = datas;
+	}
+
+}

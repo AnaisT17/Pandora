@@ -1,0 +1,19 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import java.util.List;
+
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.interfaces.dto.Membre;
+
+public interface MembreDao {
+
+	public MembreDto getInstance();
+
+	public void insert(MembreDto membre);
+
+	public void update(MembreDto membre);
+
+	public void delete(MembreDto membre);
+
+	public List<Membre> getAll();
+}

@@ -1,0 +1,17 @@
+package fr.seedle.pandora.interfaces;
+
+public interface Lieu extends Pandora {
+
+	public String getLongitude();
+
+	public void setLongitude(String longitude);
+
+	public String getLatitude();
+
+	public void setLatitude(String latitude);
+
+	public String getUTM();
+
+	public void setUTM(String utm);
+
+}

@@ -1,0 +1,16 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import fr.seedle.pandora.interfaces.dto.Equipe;
+import fr.seedle.pandora.interfaces.dto.Lieu;
+
+public interface EquipeDao {
+
+	public Equipe getInstance();
+
+	public void insert(Equipe equipe);
+
+	public void update(Equipe equipe);
+
+	public void delete(Equipe equipe);
+
+}

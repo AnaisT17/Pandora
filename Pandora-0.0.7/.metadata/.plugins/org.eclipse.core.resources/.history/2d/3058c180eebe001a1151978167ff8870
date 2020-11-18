@@ -1,0 +1,7 @@
+package fr.seedle.pandora.dao;
+
+import fr.seedle.pandora.interfaces.dao.EquipeDao;
+
+public class LieuDaoImpl implements EquipeDao {
+
+}

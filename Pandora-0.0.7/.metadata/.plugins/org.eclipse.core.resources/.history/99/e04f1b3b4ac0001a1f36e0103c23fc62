@@ -1,0 +1,20 @@
+package fr.seedle.pandora.singleton;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.seedle.pandora.dto.MembreDto;
+
+public class UtilisateurSingleton {
+
+	private static UtilisateurSingleton utilisateurSingleton;
+
+	private List<MembreDto> listMembres = new ArrayList<>();
+
+	public static UtilisateurSingleton getInstance() {
+		if (utilisateurSingleton == null) {
+			utilisateurSingleton = new UtilisateurSingleton();
+		}
+		return utilisateurSingleton;
+	}
+}

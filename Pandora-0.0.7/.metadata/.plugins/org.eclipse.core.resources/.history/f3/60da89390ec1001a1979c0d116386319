@@ -1,0 +1,7 @@
+package fr.seedle.pandora.dto;
+
+import fr.seedle.pandora.interfaces.dto.Operation;
+
+public class OperationDto  extends PandoraObjectDto implements Operation {
+
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<head>
+<meta charset="UTF-8" />
+<title>Gestion des membres</title>
+	</head>
+	<body>
+		<h:form>
+			<h:commandButton value="menu principal" action="mainpage" />
+
+			<h1>
+				<h:outputText
+					value="Utilisateur connecté #{loginBean.membreCourant.prenom} #{loginBean.membreCourant.nom}" />
+
+			</h1>
+
+			<p:dataTable value="#{membreControllerListBean.listMembres}"
+				var="membre">
+
+				<p:column>
+					<f:facet name="header">Nom</f:facet>
+					<h:outputText value="#{membre.nom}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Prénom</f:facet>
+					<h:outputText value="#{membre.prenom}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Pseudo</f:facet>
+					<h:outputText value="#{membre.pseudo}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Role</f:facet>
+					<h:outputText value="#{membre.role.nom}" />
+				</p:column>
+
+				<p:column>
+					<h:commandButton value="Sélectionner"
+						actionListener="#{membreControllerListBean.onSelect(membre)}" />
+
+					<h:commandButton value="changer rôle" action="rolecontroller"
+						actionListener="#{loginBean.setMembreCourant(membre)}" />
+
+				</p:column>
+
+			</p:dataTable>
+
+			<h3>
+				<h:outputText
+					rendered="#{membreControllerListBean.membreCourant!=null}"
+					value="Vous avez sélectionné #{membreControllerListBean.membreCourant.prenom} #{membreControllerListBean.membreCourant.nom}" />
+
+				<h:outputText
+					rendered="#{membreControllerListBean.membreCourant==null}"
+					value="Vous n'avez pas sélectionné de membre !" />
+			</h3>
+		</h:form>
+	</body>
+</f:view>
+</html>

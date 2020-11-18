@@ -1,0 +1,43 @@
+package fr.seedle.pandora.singleton;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import fr.seedle.pandora.dto.MembreDto;
+
+public class PandoraSession {
+
+	final HttpSession session;
+
+	MembreDto membreConnecter;
+
+	public PandoraSession(HttpServletRequest request) {
+		session = request.getSession();
+
+		final String userName = request.getParameter("user_name");
+		if (userName != null) {
+			final MembreDto membre = UtilisateurSingleton.getInstance().getMembreByLogin(userName);
+			if (membre != null) {
+				setMembreConnecter(membre);
+				request.getSession().setAttribute("membre", membre);
+			}
+		} else {
+			membre = request.getSession().getAttribute("membre");
+		}
+
+		System.out.println("Nouvelle session " + session.getId() + ", membre " + membreConnecter);
+
+	}
+
+	public HttpSession getSession() {
+		return session;
+	}
+
+	public MembreDto getMembreConnecter() {
+		return membreConnecter;
+	}
+
+	public void setMembreConnecter(MembreDto membreConnecter) {
+		this.membreConnecter = membreConnecter;
+	}
+}

@@ -1,0 +1,31 @@
+package fr.seedle.pandora.dto;
+
+import fr.seedle.pandora.interfaces.dto.PandoraObject;
+
+public class PandoraObjectDto implements PandoraObject {
+
+	@Override
+	public long getId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setId(long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String getNom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setNom(String nom) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

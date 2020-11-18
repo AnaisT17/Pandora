@@ -1,0 +1,14 @@
+package fr.seedle.pandora.singleton;
+
+public class HibernateSingleton {
+
+	private static HibernateSingleton hibernateSingleton;
+
+	public static HibernateSingleton getInstance() {
+		if (hibernateSingleton == null) {
+			hibernateSingleton = new HibernateSingleton();
+		}
+		return hibernateSingleton;
+	}
+
+}

@@ -1,0 +1,12 @@
+package fr.seedle.pandora.servlet;
+
+import javax.servlet.http.HttpServlet;
+
+public class ServletAddOperation extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4248675924091455371L;
+
+}

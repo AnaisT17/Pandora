@@ -1,0 +1,112 @@
+package fr.seedle.pandora.bean;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+
+import fr.seedle.pandora.dao.MembreDaoImpl;
+import fr.seedle.pandora.dao.RoleDaoImpl;
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.dto.RoleDto;
+import fr.seedle.pandora.interfaces.dao.MembreDao;
+import fr.seedle.pandora.interfaces.dao.RoleDao;
+import fr.seedle.pandora.singleton.DataSingleton;
+
+@ManagedBean(name = "roleControllerListBean")
+@ViewScoped
+public class RoleControllerListBean {
+
+	private List<RoleDto> listRoles;
+
+	private RoleDto role;
+
+	/***
+	 * Cette méthode possédant l'annotation 'PostConstruct' sera appelée
+	 * automatiquement lors de l'instanciation du bean
+	 */
+	@PostConstruct
+	public void init() {
+// Nous allons appeler RoleSingleton pour obtenir la liste des roles
+		// listRoles = RoleSingleton.getInstance().getListRoles();
+		RoleDao roleDao = new RoleDaoImpl();
+		listRoles = roleDao.getAll();
+	}
+
+	public List<RoleDto> getListRoles() {
+		return listRoles;
+	}
+
+	public void setListRoles(List<RoleDto> listRoles) {
+		this.listRoles = listRoles;
+	}
+
+	public RoleDto getRole() {
+		return role;
+	}
+
+	public void setRole(RoleDto role) {
+		this.role = role;
+	}
+
+	public void onSave() {
+		final FacesContext context = FacesContext.getCurrentInstance();
+		final LoginBean loginBean = context.getApplication().evaluateExpressionGet(context, "#{loginBean}",
+				LoginBean.class);
+
+		final MembreDto membreCourant = loginBean.getMembreCourant();
+		final MembreDao membreDao = new MembreDaoImpl();
+		membreDao.update(membreCourant);
+
+		System.out.println("L'enregistrement de " + membreCourant + " est réalisé");
+
+		Connection connexion = DataSingleton.getInstance().getDatas().getConnection();
+		Statement statement;
+		try {
+			statement = connexion.createStatement();
+			ResultSet rs = statement.executeQuery("select * from membre");
+			while (rs.next()) {
+				final MembreDto membreDto = new MembreDto();
+				membreDto.setId(rs.getLong("id"));
+				membreDto.setLogin(rs.getString("nom"));
+				membreDto.setLogin(rs.getString("login"));
+
+				System.out.println("result " + membreDto + " - role " + rs.getLong("idrole"));
+			}
+			statement.close();
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		DataSingleton.getInstance().getDatas().closeConnection(connexion);
+
+	}
+
+	public void onSelect(RoleDto role) {
+		this.role = role;
+
+		final FacesContext context = FacesContext.getCurrentInstance();
+		final LoginBean loginBean = context.getApplication().evaluateExpressionGet(context, "#{loginBean}",
+				LoginBean.class);
+
+		loginBean.getMembreCourant().setRole(this.role);
+	}
+
+	public void deSelect() {
+		this.role = null;
+
+		final FacesContext context = FacesContext.getCurrentInstance();
+		final LoginBean loginBean = context.getApplication().evaluateExpressionGet(context, "#{loginBean}",
+				LoginBean.class);
+
+		loginBean.getMembreCourant().setRole(null);
+	}
+}

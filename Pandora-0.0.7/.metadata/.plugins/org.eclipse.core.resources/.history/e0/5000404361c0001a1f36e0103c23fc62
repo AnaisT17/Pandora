@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="fr.seedle.pandora.singleton.*"%>
+<%@ page import="fr.seedle.pandora.dto.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WithBean sur backoffice de Pandora</title>
+</head>
+<body>
+	<h1>
+		<jsp:useBean id="pandoraBean"
+			class="fr.seedle.pandora.singleton.PandoraBean" scope="session">
+			<%
+				pandoraBean.init(request, response);
+			%>
+		</jsp:useBean>
+
+		<%
+			final MembreDto membre = pandoraBean.getMembreConnecter();
+		System.out.println("membre : " + membre);
+		%>
+
+
+		WithBean Bienvenue sur l'administration de Pandora
+		<%=membre.getPrenom() + " " + membre.getNom()%></h1>
+	<ul>
+		<li><a href="pandora/role/RoleController.jsp">gestion des
+				roles</a></li>
+	</ul>
+	<p>orem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+		tincidunt interdum mollis. Curabitur aliquam consequat elementum.
+		Integer vel massa quis nisi hendrerit molestie. Morbi urna nisi,
+		varius eget aliquam quis, iaculis sit amet felis. Class aptent taciti
+		sociosqu ad litora torquent per conubia nostra, per inceptos
+		himenaeos. Phasellus aliquam ultrices aliquam. Aenean vitae pulvinar
+		lectus. Nullam tincidunt, lacus id pretium luctus, justo diam luctus
+		eros, vel cursus mauris mauris eget massa. Sed est dolor, ultricies et
+		enim eu, tempus pretium velit. Cras tempor pretium accumsan. Donec in
+		dictum justo. Praesent malesuada congue vulputate. Nam aliquet
+		interdum arcu, fermentum semper sem eleifend vehicula. In justo magna,
+		iaculis in metus in, commodo tempus quam. Pellentesque consectetur
+		mollis urna at lacinia. Praesent iaculis bibendum accumsan. Interdum
+		et malesuada fames ac ante ipsum primis in faucibus. Donec tempus,
+		felis vitae feugiat interdum, felis odio accumsan elit, nec placerat
+		est est in nisi. Aenean a mi tincidunt, sollicitudin purus in,
+		elementum ligula. Mauris feugiat, ipsum eget pulvinar tempor, ligula
+		lectus scelerisque dui, ornare pulvinar purus metus quis lorem. Ut
+		tristique in est sit amet rutrum. Vestibulum ut rhoncus nisi, sed
+		pharetra ante. Vestibulum semper nisl fringilla nunc suscipit, id
+		molestie urna varius. Suspendisse potenti. Nulla semper mollis augue,
+		efficitur porttitor purus pharetra in.</p>
+</body>
+</html>

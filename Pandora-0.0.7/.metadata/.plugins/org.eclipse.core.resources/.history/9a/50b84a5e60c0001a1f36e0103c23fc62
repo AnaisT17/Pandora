@@ -1,0 +1,44 @@
+package fr.seedle.pandora.singleton;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.dto.RoleDto;
+
+public class PandoraBean {
+
+	public void init(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("Je suis instancié " + this.getClass().getName());
+
+		final String userName = request.getParameter("user_name");
+		if (userName != null) {
+			MembreDto membre = UtilisateurSingleton.getInstance().getMembreByLogin(userName);
+			if (membre != null) {
+				setMembreConnecter(membre);
+			}
+		}
+
+	}
+
+	private MembreDto membreConnecter;
+
+	private RoleDto roleCourant;
+
+	public MembreDto getMembreConnecter() {
+		return membreConnecter;
+	}
+
+	public void setMembreConnecter(MembreDto membreConnecter) {
+		this.membreConnecter = membreConnecter;
+	}
+
+	public RoleDto getRoleCourant() {
+		return roleCourant;
+	}
+
+	public void setRoleCourant(RoleDto roleCourant) {
+		this.roleCourant = roleCourant;
+	}
+
+}

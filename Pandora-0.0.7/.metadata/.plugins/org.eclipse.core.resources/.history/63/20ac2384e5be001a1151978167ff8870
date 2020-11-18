@@ -1,0 +1,10 @@
+package fr.seedle.pandora.interfaces;
+
+import java.util.Set;
+
+public interface RelationFactionEquipe {
+
+	public Set<Equipe> getListEquipes();
+
+	public void setListEquipes(Set<Equipe> listEquipes);
+}

@@ -1,0 +1,15 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import fr.seedle.pandora.interfaces.dto.Faction;
+
+public interface FactionDao {
+
+	public Faction getInstance();
+
+	public void insert(Faction faction);
+
+	public void update(Faction faction);
+
+	public void delete(Faction faction);
+
+}

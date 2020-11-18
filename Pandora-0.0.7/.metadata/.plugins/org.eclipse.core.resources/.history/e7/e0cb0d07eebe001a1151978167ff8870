@@ -1,0 +1,15 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import fr.seedle.pandora.interfaces.dto.OperationRole;
+
+public interface OperationRoleRoleDao {
+
+	public OperationRole getInstance();
+
+	public void insert(OperationRole operationRoleRole);
+
+	public void update(OperationRole operationRoleRole);
+
+	public void delete(OperationRole operationRoleRole);
+
+}

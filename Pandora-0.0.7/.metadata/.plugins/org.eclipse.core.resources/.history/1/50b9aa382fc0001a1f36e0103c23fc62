@@ -1,0 +1,27 @@
+package fr.seedle.pandora.dto;
+
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import fr.seedle.pandora.interfaces.dto.Role;
+
+@Entity(name = "RoleDto")
+@Table(name = "role")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class RoleDto extends PandoraObjectDto implements Role {
+
+	@OneToMany
+	private Set<MembreDto> listMembres;
+
+	@Override
+	public String toString() {
+		return "RoleDto [listMembres=" + listMembres + ", getId()=" + getId() + ", getNom()=" + getNom() + "]";
+	}
+	
+	
+}

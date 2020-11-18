@@ -1,0 +1,13 @@
+package fr.seedle.pandora.singleton;
+
+public class UtilisateurSingleton {
+
+	private static UtilisateurSingleton UtilisateurSingleton;
+
+	public static UtilisateurSingleton getInstance() {
+		if (utilisateurSingleton == null) {
+			utilisateurSingleton = new UtilisateurSingleton();
+		}
+		return utilisateurSingleton;
+	}
+}

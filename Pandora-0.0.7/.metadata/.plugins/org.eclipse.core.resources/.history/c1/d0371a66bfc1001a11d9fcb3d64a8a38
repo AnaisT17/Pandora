@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15942834773020" configfile="/pandora/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pandora/*" x="122" y="754" id="pf15942836196411" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15942836196412 pf15942836196413 pf15942836196414 pf15942836196415 pf159428379200410" path="/pandora/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pandora/login" x="456" y="600" id="pf15942836196416" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15942836196412" path="/pandora/login.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pandora/mainpage" x="420" y="757" id="pf15942836196417" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15942836196413" path="/pandora/mainpage.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pandora/role/RoleController" x="432" y="915" id="pf15942836196418" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf15942836196414" path="/pandora/role/RoleController.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pandora/operation/OperationController" x="228" y="1056" id="pf15942836196419" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf15942836196415" path="/pandora/operation/OperationController.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="pandora/membre/MembreController" id="pf159428379200411" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf159428379200410" path="/pandora/membre/MembreController.jsp"/>
+  <links id="pf15942836196412" target="pf15942836196416" source="pf15942836196411" outcome="login"/>
+  <links id="pf15942836196413" target="pf15942836196417" source="pf15942836196411" outcome="mainpage"/>
+  <links id="pf15942836196414" target="pf15942836196418" source="pf15942836196411" outcome="rolecontroller"/>
+  <links id="pf15942836196415" target="pf15942836196419" source="pf15942836196411" outcome="operationcontroller"/>
+  <links id="pf159428379200410" target="pf159428379200411" source="pf15942836196411" outcome="membrecontroller"/>
+</pageflow:Pageflow>

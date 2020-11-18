@@ -1,0 +1,66 @@
+package fr.seedle.pandora.dto;
+
+import java.util.Set;
+
+import fr.seedle.pandora.interfaces.dto.Equipe;
+import fr.seedle.pandora.interfaces.dto.Faction;
+import fr.seedle.pandora.interfaces.dto.Membre;
+import fr.seedle.pandora.interfaces.dto.RelationFactionEquipe;
+
+public class RelationFactionEquipeDto extends PandoraObjectDto implements RelationFactionEquipe {
+
+	private FactionDto faction;
+
+	private EquipeDto equipe;
+
+	private Set<MembreDto> listMembres;
+
+	@Override
+	public Faction getFaction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFaction(Faction faction) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Equipe getEquipe() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setEquipe() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public OperationRoleDto getOperationRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setOperationRole(OperationRoleDto operationRole) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Set<Membre> getListMembres() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setListMembres(Set<Membre> listMembre) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

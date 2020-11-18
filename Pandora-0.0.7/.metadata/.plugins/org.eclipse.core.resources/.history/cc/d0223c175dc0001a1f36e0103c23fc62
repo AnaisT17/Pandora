@@ -1,0 +1,17 @@
+package fr.seedle.pandora.singleton;
+
+import fr.seedle.pandora.dto.MembreDto;
+
+public class PandoraBean {
+
+	private MembreDto membreConnecter;
+
+	public MembreDto getMembreConnecter() {
+		return membreConnecter;
+	}
+
+	public void setMembreConnecter(MembreDto membreConnecter) {
+		this.membreConnecter = membreConnecter;
+	}
+
+}

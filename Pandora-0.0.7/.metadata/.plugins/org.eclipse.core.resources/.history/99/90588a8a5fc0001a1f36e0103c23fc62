@@ -1,0 +1,28 @@
+package fr.seedle.pandora.singleton;
+
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.dto.RoleDto;
+
+public class PandoraBean {
+
+	private MembreDto membreConnecter;
+
+	private RoleDto roleCourant;
+
+	public MembreDto getMembreConnecter() {
+		return membreConnecter;
+	}
+
+	public void setMembreConnecter(MembreDto membreConnecter) {
+		this.membreConnecter = membreConnecter;
+	}
+
+	public RoleDto getRoleCourant() {
+		return roleCourant;
+	}
+
+	public void setRoleCourant(RoleDto roleCourant) {
+		this.roleCourant = roleCourant;
+	}
+
+}

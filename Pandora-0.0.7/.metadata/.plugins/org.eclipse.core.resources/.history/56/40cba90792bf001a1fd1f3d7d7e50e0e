@@ -1,0 +1,8 @@
+package fr.seedle.pandora.dto;
+
+import fr.seedle.pandora.interfaces.dto.PandoraObject;
+
+public class PandoraObjectDto implements PandoraObject {
+
+
+}

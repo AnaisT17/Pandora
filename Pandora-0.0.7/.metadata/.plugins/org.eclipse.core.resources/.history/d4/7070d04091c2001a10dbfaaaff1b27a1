@@ -1,0 +1,16 @@
+package fr.seedle.pandora.test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import fr.seedle.pandora.bean.LoginBean;
+
+public class TestInstanciationBean {
+
+	static Map<String, Object> mapBean = new HashMap<String, Object>();
+
+	public static void main(String[] args) {
+		LoginBean loginBean = new LoginBean();
+		mapBean.put("loginBean", loginBean);
+	}
+}

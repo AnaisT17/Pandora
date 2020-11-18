@@ -1,0 +1,12 @@
+fr/seedle/pandora/bean/LoginBean.class
+fr/seedle/pandora/singleton/MembreSingleton.class
+fr/seedle/pandora/view/MembreView.class
+fr/seedle/pandora/view/EquipeView.class
+fr/seedle/pandora/bean/MembreControllerListBean.class
+fr/seedle/pandora/view/OperationView.class
+fr/seedle/pandora/singleton/RoleSingleton.class
+fr/seedle/pandora/view/RoleView.class
+fr/seedle/pandora/test/TestInstanciationBean.class
+fr/seedle/pandora/view/OperationRoleView.class
+fr/seedle/pandora/singleton/OperationSingleton.class
+fr/seedle/pandora/bean/PandoraBean.class

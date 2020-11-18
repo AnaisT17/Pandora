@@ -1,0 +1,5 @@
+package fr.seedle.pandora.singleton;
+
+public class HibernateSingleton {
+
+}

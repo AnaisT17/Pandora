@@ -1,0 +1,32 @@
+package fr.seedle.pandora.interfaces;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+public interface Operation extends PandoraObject {
+
+	public String getDescription();
+
+	public void setDescription(String description);
+
+	public Lieu getLieu();
+
+	public void setLieu(Lieu lieu);
+
+	public LocalDateTime getDateHeureDebut();
+
+	public void setDateHeureDebut(LocalDateTime dateHeureDebut);
+
+	public LocalDateTime getDateHeureFin();
+
+	public void setDateHeureFin(LocalDateTime dateHeureFin);
+
+	public Set<Equipe> getListEquipeOrganisatrices();
+
+	public void setEquipeOrganisatrices(Set<Equipe> listEquipeOrganisatrices);
+
+	public Set<Faction> getListFactions();
+
+	public void setListFactions(Set<Faction> listFactions);
+
+}

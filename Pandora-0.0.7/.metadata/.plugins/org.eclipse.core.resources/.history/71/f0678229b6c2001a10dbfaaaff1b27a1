@@ -1,0 +1,66 @@
+<html>
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
+<f:view>
+	<head>
+<meta charset="UTF-8">
+<title>Gestion des membres</title>
+	</head>
+	<body>
+
+		<h:form>
+			<h:commandButton value="menu principal" action="mainpage" />
+
+			<h1>
+				<h:outputText
+					value="Utilisateur connecté #{loginBean.membreCourant.prenom} #{loginBean.membreCourant.nom}" />
+
+			</h1>
+
+			<h:dataTable value="#{membreControllerListBean.listMembres}"
+				var="membre">
+
+				<h:column>
+					<f:facet name="header">Nom</f:facet>
+					<h:outputText value="#{membre.nom}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Prénom</f:facet>
+					<h:outputText value="#{membre.prenom}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Pseudo</f:facet>
+					<h:outputText value="#{membre.pseudo}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Role</f:facet>
+					<h:outputText value="#{membre.role.nom}" />
+				</h:column>
+
+				<h:column>
+					<h:commandButton value="Sélectionner"
+						actionListener="#{membreControllerListBean.onSelect(membre)}" />
+
+					<h:commandButton value="changer rôle" action="rolecontroller"
+						actionListener="#{loginBean.setMembreCourant(membre)}" />
+
+				</h:column>
+
+			</h:dataTable>
+
+			<h3>
+				<h:outputText
+					rendered="#{membreControllerListBean.membreCourant!=null}"
+					value="Vous avez sélectionné #{membreControllerListBean.membreCourant.prenom} #{membreControllerListBean.membreCourant.nom}" />
+
+				<h:outputText
+					rendered="#{membreControllerListBean.membreCourant==null}"
+					value="Vous n'avez pas sélectionné de membre !" />
+			</h3>
+		</h:form>
+	</body>
+</f:view>
+</html>

@@ -1,0 +1,104 @@
+package fr.seedle.pandora.singleton;
+
+import java.sql.SQLException;
+import java.util.Date;
+
+import fr.seedle.pandora.dao.MembreDaoImpl;
+import fr.seedle.pandora.dao.RoleDaoImpl;
+import fr.seedle.pandora.data.Datas;
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.dto.RoleDto;
+import fr.seedle.pandora.interfaces.dao.MembreDao;
+import fr.seedle.pandora.interfaces.dao.RoleDao;
+import fr.seedle.pandora.interfaces.dto.Role;
+
+public class DataSingleton {
+
+	private static DataSingleton datasSingleton;
+
+	private Datas datas;
+
+	public static DataSingleton getInstance() {
+		if (datasSingleton == null) {
+			try {
+				datasSingleton = new DataSingleton();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return datasSingleton;
+	}
+
+	public DataSingleton() throws SQLException {
+		datas = new Datas();
+		datas.createSequence();
+		datas.createTableMembre();
+		datas.createTableRole();
+		datas.createTableRoleMembre();
+	}
+
+	public Datas getDatas() {
+		return datas;
+	}
+
+	public void setDatas(Datas datas) {
+		this.datas = datas;
+	}
+
+	public void generateFalseData() {
+		final RoleDao roleDao = new RoleDaoImpl();
+		final Role role = roleDao.getInstance();
+		role.setNom("magicien");
+
+		final MembreDao membreDao = new MembreDaoImpl();
+		final MembreDto membre = membreDao.getInstance();
+
+		membre.setAvatar("Avatar");
+		membre.setPseudo("toto");
+		membre.setDateNaissance(new Date());
+		membre.setEmail("toto@titi.com");
+		membre.setLeader(false);
+		membre.setLogin("toto");
+		membre.setMobile("01 02 03 04 05");
+		membre.setNom("Titi");
+		membre.setPrenom("toto");
+
+		membre.setRole((RoleDto) role);
+		System.out.println("Role du membre " + membre.getNom() + " " + membre.getRole());
+
+		final MembreDto membre2 = membreDao.getInstance();
+
+		membre2.setAvatar("Avatar");
+		membre2.setPseudo("tata");
+		membre2.setDateNaissance(new Date());
+		membre2.setEmail("tata@titi.com");
+		membre2.setLeader(false);
+		membre2.setLogin("tata");
+		membre2.setMobile("01 02 03 04 05");
+		membre2.setNom("Tata");
+		membre2.setPrenom("tata");
+
+		membre2.setRole((RoleDto) role);
+		System.out.println("Role du membre " + membre2.getNom() + " " + membre2.getRole());
+
+		try {
+			roleDao.insert((RoleDto) role);
+		} catch (Throwable e1) {
+			e1.printStackTrace();
+		}
+
+		try {
+			membreDao.insert(membre);
+		} catch (Throwable e1) {
+			e1.printStackTrace();
+		}
+
+		try {
+			membreDao.insert(membre2);
+		} catch (Throwable e1) {
+			e1.printStackTrace();
+		}
+	}
+
+}

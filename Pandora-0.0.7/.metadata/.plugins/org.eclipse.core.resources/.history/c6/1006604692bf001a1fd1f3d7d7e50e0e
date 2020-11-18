@@ -1,0 +1,45 @@
+package fr.seedle.pandora.dto;
+
+import java.util.Date;
+
+import fr.seedle.pandora.interfaces.dto.Membre;
+import fr.seedle.pandora.interfaces.dto.Role;
+
+public class MembreDto extends PandoraObjectDto implements Membre {
+
+	private String avatar;
+	private String prenom;
+	private String pseudo;
+	private String login;
+	private String email;
+	private String mobile;
+	private Date dateNaissance;
+
+	private boolean isLeader;
+	private Role role;
+
+	@Override
+	public boolean isLeader() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setLeader(boolean isLeader) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Role getRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setRole(Role role) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

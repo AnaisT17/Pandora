@@ -1,0 +1,30 @@
+package fr.seedle.pandora.singleton;
+
+import fr.seedle.pandora.hibernate.HibernateConfiguration;
+
+public class HibernateSingleton {
+
+	private static HibernateSingleton hibernateSingleton;
+
+	private HibernateConfiguration hibernateConfiguration;
+
+	public static HibernateSingleton getInstance() {
+		if (hibernateSingleton == null) {
+			hibernateSingleton = new HibernateSingleton();
+		}
+		return hibernateSingleton;
+	}
+
+	public HibernateSingleton() {
+		hibernateConfiguration = new HibernateConfiguration();
+	}
+
+	public HibernateConfiguration getHibernateConfiguration() {
+		return hibernateConfiguration;
+	}
+
+	public void setHibernateConfiguration(HibernateConfiguration hibernateConfiguration) {
+		this.hibernateConfiguration = hibernateConfiguration;
+	}
+
+}

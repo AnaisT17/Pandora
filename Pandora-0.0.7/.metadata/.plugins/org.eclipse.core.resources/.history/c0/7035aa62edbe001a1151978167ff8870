@@ -1,0 +1,7 @@
+package fr.seedle.pandora.dto;
+
+import fr.seedle.pandora.interfaces.Operation;
+
+public class RoleDto implements Operation {
+
+}

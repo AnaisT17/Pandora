@@ -1,0 +1,57 @@
+package fr.seedle.pandora.bean;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
+
+import fr.seedle.pandora.dto.RoleDto;
+import fr.seedle.pandora.singleton.RoleSingleton;
+
+@ManagedBean(name = "roleControllerListBean")
+@ViewScoped
+public class RoleControllerListBean {
+
+	@ManagedProperty(value = "#{loginBean}")
+	LoginBean loginBean;
+
+	private List<RoleDto> listRoles;
+
+	private RoleDto role;
+
+	/***
+	 * Cette méthode possédant l'annotation 'PostConstruct' sera appelée
+	 * automatiquement lors de l'instanciation du bean
+	 */
+	@PostConstruct
+	public void init() {
+// Nous allons appeler RoleSingleton pour obtenir la liste des roles
+		listRoles = RoleSingleton.getInstance().getListRoles();
+	}
+
+	public List<RoleDto> getListRoles() {
+		return listRoles;
+	}
+
+	public void setListRoles(List<RoleDto> listRoles) {
+		this.listRoles = listRoles;
+	}
+
+	public RoleDto getRole() {
+		return role;
+	}
+
+	public void setRole(RoleDto role) {
+		this.role = role;
+	}
+
+	public void onSelect(RoleDto role) {
+//		final FacesContext context = FacesContext.getCurrentInstance();
+//		final LoginBean loginBean = (LoginBean) context.getApplication().evaluateExpressionGet(context, "#{loginBean}",
+//				LoginBean.class);
+		System.out.println("Sélection d'un rôle " + role + " pour " + loginBean.getLogin());
+		this.role = role;
+	}
+}

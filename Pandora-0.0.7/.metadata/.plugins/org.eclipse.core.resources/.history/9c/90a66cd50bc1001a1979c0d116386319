@@ -1,0 +1,15 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import fr.seedle.pandora.interfaces.dto.RelationFactionEquipe;
+
+public interface RelationFactionEquipeDao {
+
+	public RelationFactionEquipe getInstance();
+
+	public void insert(RelationFactionEquipe relationFactionEquipe);
+
+	public void update(RelationFactionEquipe relationFactionEquipe);
+
+	public void delete(RelationFactionEquipe relationFactionEquipe);
+
+}

@@ -1,0 +1,14 @@
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/bean/MembreControllerListBean.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/bean/LoginBean.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/singleton/MembreSingleton.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/view/MembreView.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/view/EquipeView.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/view/RoleView.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/view/OperationView.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/singleton/RoleSingleton.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/bean/PandoraBean.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/bean/RoleControllerListBean.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/view/OperationRoleView.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/test/TestInstanciationBean.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/singleton/OperationSingleton.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora/src/fr/seedle/pandora/servlet/ServletOperationManager.java

@@ -1,0 +1,32 @@
+package fr.seedle.pandora.dao;
+
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.interfaces.dao.MembreDao;
+import fr.seedle.pandora.interfaces.dto.Membre;
+
+public class MembreDaoImpl implements MembreDao {
+
+	@Override
+	public Membre getInstance() {
+		return new MembreDto();
+	}
+
+	@Override
+	public void insert(Membre membre) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Membre membre) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(Membre membre) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

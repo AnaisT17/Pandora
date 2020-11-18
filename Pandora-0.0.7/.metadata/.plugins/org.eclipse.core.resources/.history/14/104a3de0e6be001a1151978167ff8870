@@ -1,0 +1,9 @@
+package fr.seedle.pandora.interfaces;
+
+public interface OperationRole extends Pandora {
+
+	public Operation getOperation();
+
+	public void setOperation(Operation operation);
+
+}

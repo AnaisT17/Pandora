@@ -1,0 +1,27 @@
+package fr.seedle.pandora.interfaces.dto;
+
+import java.util.Set;
+
+public interface Equipe extends PandoraObject {
+
+	public String getBlason();
+
+	public void setBlason(String blason);
+
+	public Lieu getLieu();
+
+	public void setLieu(Lieu lieu);
+
+	public Set<Membre> getListMembres();
+
+	public void setListMembres(Set<Membre> listMembres);
+
+	public String getDescription();
+
+	public void setDescription(String description);
+
+	public String getDressCode();
+
+	public void setDressCode(String dressCode);
+
+}

@@ -1,0 +1,11 @@
+package fr.seedle.pandora.dto;
+
+import fr.seedle.pandora.interfaces.dto.RelationFactionEquipe;
+
+public class RelationFactionEquipeDto extends PandoraObjectDto implements RelationFactionEquipe {
+
+	private FactionDto faction;
+
+	private EquipeDto equipe;
+
+}

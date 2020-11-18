@@ -1,0 +1,165 @@
+package fr.seedle.pandora.membre.test;
+
+import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.junit.Test;
+
+import fr.seedle.pandora.dao.MembreDaoImpl;
+import fr.seedle.pandora.dao.RoleDaoImpl;
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.dto.RoleDto;
+import fr.seedle.pandora.hibernate.HibernateConfiguration;
+import fr.seedle.pandora.interfaces.dao.MembreDao;
+import fr.seedle.pandora.interfaces.dao.RoleDao;
+import fr.seedle.pandora.interfaces.dto.Role;
+
+public class MembreTest {
+
+	@Test
+	public void execute() throws SQLException {
+
+		final HibernateConfiguration hibernateConfiguration = new HibernateConfiguration();
+		final File fileHibernateConfig = new File("masociete.cfg.xml");
+		final Configuration configuration = hibernateConfiguration.getConfiguration(fileHibernateConfig);
+
+		final StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
+		builder.applySettings(configuration.getProperties()).build();
+		final ServiceRegistry serviceRegistry = builder.build();
+
+		SessionFactory factory = configuration.buildSessionFactory(serviceRegistry);
+
+		System.out.println("Before role");
+
+		final RoleDao roleDao = new RoleDaoImpl();
+		final Role role = roleDao.getInstance();
+		role.setNom("magicien");
+
+		System.out.println("Before membre");
+
+		final MembreDao membreDao = new MembreDaoImpl();
+		final MembreDto membre = membreDao.getInstance();
+
+		System.out.println("Before affectation attribut au membre");
+
+		membre.setAvatar("Avatar");
+		membre.setPseudo("toto");
+		membre.setDateNaissance(new Date());
+		membre.setEmail("toto@titi.com");
+		membre.setLeader(false);
+		membre.setLogin("toto");
+		membre.setMobile("01 02 03 04 05");
+		membre.setNom("Titi");
+		membre.setPrenom("toto");
+
+		membre.setRole((RoleDto) role);
+
+		System.out.println("Before insertion membre");
+
+		createSequence();
+		createTableRole();
+		createTableMembre();
+
+		roleDao.insert((RoleDto) role);
+
+		try {
+			membreDao.insert(membre);
+			System.out.println("il n'est pas possible d'arriver sur cette ligne");
+		} catch (Throwable e) {
+			System.out.println("il manque un membre");
+		}
+
+		Connection connexion = getConnection();
+		Statement statement = connexion.createStatement();
+
+		ResultSet rs = statement.executeQuery("select * from membre");
+		while (rs.next()) {
+			final MembreDto membreDto = new MembreDto();
+			membreDto.setId(rs.getLong("id"));
+			membreDto.setLogin(rs.getString("nom"));
+			membreDto.setLogin(rs.getString("login"));
+			System.out.println("result " + membreDto);
+		}
+
+		statement.close();
+		rs.close();
+		closeConnection(connexion);
+
+		connexion = getConnection();
+		statement = connexion.createStatement();
+
+		rs = statement.executeQuery("select * from role");
+		while (rs.next()) {
+			final RoleDto roleDto = new RoleDto();
+			roleDto.setId(rs.getLong("id"));
+			roleDto.setNom(rs.getString("nom"));
+			System.out.println("result " + roleDto);
+		}
+
+		statement.close();
+		rs.close();
+		closeConnection(connexion);
+
+	}
+
+	public Connection getConnection() {
+		try {
+			Class.forName("org.hsqldb.jdbcDriver");
+			// Fonctionnement avec écriture sur disque dur
+			// DriverManager.getConnection("jdbc:hsqldb:file:database", "sa", "");
+
+			// Fonctionnement exclusivement en mémoire
+			Connection connexion = DriverManager.getConnection("jdbc:hsqldb:mem:database", "sa", "");
+			return connexion;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public void closeConnection(Connection c) {
+		try {
+			c.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void createSequence() throws SQLException {
+		Connection connexion = getConnection();
+		Statement statement = connexion.createStatement();
+		statement.executeUpdate("CREATE SEQUENCE HIBERNATE_SEQUENCE START WITH 1 INCREMENT BY 1");
+		statement.close();
+		closeConnection(connexion);
+	}
+
+	public void createTableMembre() throws SQLException {
+		Connection connexion = getConnection();
+		Statement statement = connexion.createStatement();
+		statement.executeUpdate(
+				"CREATE TABLE membre(id bigint, idRole bigint, nom varchar(100),avatar varchar(100),prenom varchar(100), pseudo varchar(100), login varchar(100), email varchar(100),\n"
+						+ " mobile varchar(100), dateNaissance timestamp, isLeader boolean)");
+		statement.close();
+		closeConnection(connexion);
+	}
+
+	public void createTableRole() throws SQLException {
+		Connection connexion = getConnection();
+		Statement statement = connexion.createStatement();
+		statement.executeUpdate("CREATE TABLE role(id bigint,nom varchar(100))");
+		statement.close();
+		closeConnection(connexion);
+	}
+
+}

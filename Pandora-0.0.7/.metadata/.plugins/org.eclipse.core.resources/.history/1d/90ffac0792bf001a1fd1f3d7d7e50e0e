@@ -1,0 +1,7 @@
+package fr.seedle.pandora.dto;
+
+import fr.seedle.pandora.interfaces.dto.Membre;
+
+public class MembreDto  extends PandoraObjectDto implements Membre {
+
+}

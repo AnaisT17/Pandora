@@ -1,0 +1,5 @@
+package fr.seedle.pandora.dao;
+
+public class EquipeDaoImpl implements EquipeDao {
+
+}

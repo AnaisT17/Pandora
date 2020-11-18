@@ -1,0 +1,10 @@
+package fr.seedle.pandora.launcher;
+
+public class ApplicationLauncher {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

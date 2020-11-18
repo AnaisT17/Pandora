@@ -1,0 +1,12 @@
+package fr.seedle.pandora.launcher;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class ApplicationLauncher {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ObjectMapper mapper = new ObjectMapper();
+	}
+
+}

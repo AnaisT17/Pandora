@@ -1,0 +1,12 @@
+package fr.seedle.pandora.interfaces;
+
+public interface Pandora {
+
+	public long getId();
+	
+	public void setId(long id);
+	
+	public String getNom();
+	
+	public void setNom(String nom);
+}

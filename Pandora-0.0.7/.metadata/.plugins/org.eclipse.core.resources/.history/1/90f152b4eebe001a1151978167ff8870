@@ -1,0 +1,7 @@
+package fr.seedle.pandora.dao;
+
+import fr.seedle.pandora.interfaces.dao.OperationDao;
+
+public class OperationRoleDaoImpl implements OperationDao {
+
+}

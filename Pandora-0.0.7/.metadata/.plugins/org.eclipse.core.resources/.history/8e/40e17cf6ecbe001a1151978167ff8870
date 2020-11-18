@@ -1,0 +1,42 @@
+package fr.seedle.pandora.interfaces;
+
+import java.time.LocalDateTime;
+
+public interface Membre extends Pandora {
+
+	public String getAvatar();
+
+	public void setAvatar(String avatar);
+
+	public String getPrenom();
+
+	public void setPrenom();
+
+	public String getPseudo();
+
+	public void setPseudo();
+
+	public String getLogin();
+
+	public void setLogin(String login);
+
+	public String getEmail();
+
+	public void setEmail(String email);
+
+	public String getMobile();
+
+	public void setMobile(String mobile);
+
+	public LocalDateTime getDateNaissance();
+
+	public void setDateNaissance();
+
+	public boolean isLeader();
+
+	public void setLeader(boolean isLeader);
+
+	public Role getRole();
+
+	public void setRole(Role role);
+}

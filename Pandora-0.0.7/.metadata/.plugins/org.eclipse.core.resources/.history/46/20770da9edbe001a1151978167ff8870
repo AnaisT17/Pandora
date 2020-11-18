@@ -1,0 +1,7 @@
+package fr.seedle.pandora.dto;
+
+import fr.seedle.pandora.interfaces.Equipe;
+
+public class EquipeDto extends PandoraObjectDto implements Equipe {
+
+}

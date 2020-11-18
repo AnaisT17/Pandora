@@ -1,0 +1,53 @@
+package fr.seedle.pandora.hibernate;
+
+import java.io.File;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+
+import fr.seedle.pandora.dto.MembreDto;
+
+public class HibernateConfiguration {
+
+	Configuration configuration;
+	SessionFactory factory;
+
+	public HibernateConfiguration() {
+		final HibernateConfiguration hibernateConfiguration = new HibernateConfiguration();
+		final File fileHibernateConfig = new File("masociete.cfg.xml");
+		final Configuration configuration = hibernateConfiguration.getConfiguration(fileHibernateConfig);
+
+		final StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
+		builder.applySettings(configuration.getProperties()).build();
+		final ServiceRegistry serviceRegistry = builder.build();
+
+		factory = configuration.buildSessionFactory(serviceRegistry);
+	}
+
+	public Configuration getConfiguration(File fileHibernateConfig) {
+		this.configuration = new Configuration().configure(fileHibernateConfig);
+
+		this.configuration.addAnnotatedClass(MembreDto.class);
+
+		return configuration;
+	}
+
+	public Configuration getConfiguration() {
+		return configuration;
+	}
+
+	public void setConfiguration(Configuration configuration) {
+		this.configuration = configuration;
+	}
+
+	public SessionFactory getFactory() {
+		return factory;
+	}
+
+	public void setFactory(SessionFactory factory) {
+		this.factory = factory;
+	}
+
+}

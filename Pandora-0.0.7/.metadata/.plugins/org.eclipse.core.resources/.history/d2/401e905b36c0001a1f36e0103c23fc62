@@ -1,0 +1,25 @@
+package fr.seedle.pandora.interfaces.dto;
+
+import java.util.Set;
+
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.dto.OperationRoleDto;
+
+public interface RelationFactionEquipe extends PandoraObject {
+
+	public Faction getFaction();
+
+	public void setFaction(Faction faction);
+
+	public Equipe getEquipe();
+
+	public void setEquipe();
+
+	public OperationRoleDto getOperationRole();
+
+	public void setOperationRole(OperationRoleDto operationRole);
+
+	public Set<MembreDto> getListMembres();
+
+	public void setListMembres(Set<MembreDto> listMembre);
+}

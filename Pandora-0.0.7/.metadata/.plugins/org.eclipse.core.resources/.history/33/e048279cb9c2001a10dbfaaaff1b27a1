@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<head>
+<title>Gestion des roles</title>
+	</head>
+	<body>
+		<h:form>
+			<h:commandButton value="menu principal" action="mainpage" />
+
+			<h1>
+				<h:outputLabel
+					value="#{loginBean.membreCourant.prenom}
+			#{loginBean.membreCourant.nom} votre gestion de roles" />
+			</h1>
+
+			<h:dataTable value="#{roleControllerListBean.listRoles}" var="role"
+				rendered="#{loginBean.membreCourant.role==null}">
+
+				<h:column>
+					<f:facet name="header">Role</f:facet>
+					<h:outputText value="#{role.nom}" />
+					<h:commandButton value="Sélectionner"
+						actionListener="#{roleControllerListBean.onSelect(role)}" />
+				</h:column>
+
+			</h:dataTable>
+
+			<h3>
+				Vous êtes
+
+				<h:panelGroup rendered="#{loginBean.membreCourant.role!=null}">
+
+					<h:outputText value="#{loginBean.membreCourant.role.nom}" />
+					<h:commandButton value="changer de role"
+						actionListener="#{roleControllerListBean.deSelect()}" />
+
+				</h:panelGroup>
+
+				<h:outputText rendered="#{loginBean.membreCourant.role==null}"
+					value="je ne sais pas !" />
+			</h3>
+		</h:form>
+	</body>
+</f:view>
+</html>

@@ -1,0 +1,76 @@
+package fr.seedle.pandora.dto;
+
+import java.util.Set;
+
+import fr.seedle.pandora.interfaces.dto.Equipe;
+import fr.seedle.pandora.interfaces.dto.Lieu;
+
+public class EquipeDto extends PandoraObjectDto implements Equipe {
+
+	private String blason;
+	private LieuDto lieu;
+	private Set<MembreDto> listMembres;
+	private String description;
+	private DressCodeDto dressCode;
+
+	@Override
+	public String getBlason() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setBlason(String blason) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Lieu getLieu() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setLieu(Lieu lieu) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Set<MembreDto> getListMembres() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setListMembres(Set<MembreDto> listMembres) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDescription(String description) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public DressCodeDto getDressCode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDressCode(DressCodeDto dressCode) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

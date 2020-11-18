@@ -1,0 +1,13 @@
+package fr.seedle.pandora.dao;
+
+import fr.seedle.pandora.interfaces.Lieu;
+
+public interface LieuDao {
+
+	public Lieu getInstance();
+
+	public void insert(Lieu lieu);
+
+	public void update(Lieu lieu);
+
+}

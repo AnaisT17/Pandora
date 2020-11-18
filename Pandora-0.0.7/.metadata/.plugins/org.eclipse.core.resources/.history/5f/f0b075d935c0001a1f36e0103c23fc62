@@ -1,0 +1,46 @@
+package fr.seedle.pandora.interfaces.dto;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+import fr.seedle.pandora.dto.RelationFactionEquipeDto;
+
+public interface Faction extends PandoraObject {
+
+	public OperationRole getOperationRole();
+
+	public void setOperationRole(OperationRole operationRole);
+
+	public String getBlason();
+
+	public void setBlason(String blason);
+
+	public String getDescription();
+
+	public void setDescription(String description);
+
+	public DressCode getDressCode();
+
+	public void setDessCode(DressCode dressCode);
+
+	public Set<RelationFactionEquipeDto> getListRelationFactionEquipes();
+
+	public void setListRelationFactionEquipes(Set<RelationFactionEquipeDto> listRelationFactionEquipes);
+
+	public Set<Faction> getListFactionAmis();
+
+	public void setListFactionAmis(Set<Faction> listFactionAmis);
+
+	public LocalDateTime getDateHeureDebut();
+
+	public void setDateHeureDebut(LocalDateTime dateHeureDebut);
+
+	public LocalDateTime getDateHeureFin();
+
+	public void setDateHeureFin(LocalDateTime dateHeureFin);
+
+	public Lieu getLieuInsertion();
+
+	public void setLieuInsertion(Lieu lieu);
+
+}

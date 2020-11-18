@@ -1,0 +1,12 @@
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/launcher/ApplicationLauncher.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/LieuDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/ObjectifDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/hibernate/HibernateConfiguration.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/OperationRoleDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/RelationFactionEquipeDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/FactionDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/singleton/HibernateSingleton.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/MembreDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/EquipeDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/OperationDaoImpl.java
+/home/eric/Developpement/Pandora/Pandora-0.0.7/pandora-implementation/src/main/java/fr/seedle/pandora/dao/RoleDaoImpl.java

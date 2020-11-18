@@ -1,0 +1,19 @@
+package fr.seedle.pandora.interfaces;
+
+import java.util.Set;
+
+public interface Operation extends Pandora {
+
+	public String getDescription();
+
+	public void setDescription(String description);
+
+	public Equipe getEquipeOrganisatrice();
+
+	public void setEquipeOrganisatrice(Equipe equipe);
+
+	public Set<Faction> getListFactions();
+
+	public void setListFactions(Set<Faction> listFactions);
+
+}

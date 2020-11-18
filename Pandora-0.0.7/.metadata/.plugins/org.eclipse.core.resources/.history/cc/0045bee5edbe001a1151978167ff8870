@@ -1,0 +1,16 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import fr.seedle.pandora.interfaces.dto.Equipe;
+import fr.seedle.pandora.interfaces.dto.Operation;
+
+public interface OperationDao {
+
+	public Equipe getInstance();
+
+	public void insert(Operation Operation);
+
+	public void update(Operation Operation);
+
+	public void delete(Operation Operation);
+
+}

@@ -1,0 +1,53 @@
+package fr.seedle.pandora.bean;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import fr.seedle.pandora.dao.MembreDaoImpl;
+import fr.seedle.pandora.dto.MembreDto;
+import fr.seedle.pandora.interfaces.dao.MembreDao;
+
+@ManagedBean(name = "membreControllerListBean")
+@ViewScoped
+public class MembreControllerListBean {
+
+	private List<MembreDto> listMembres;
+
+	private MembreDto membreCourant;
+
+	/***
+	 * Cette méthode possédant l'annotation 'PostConstruct' sera appelée
+	 * automatiquement lors de l'instanciation du bean
+	 */
+	@PostConstruct
+	public void init() {
+// Nous allons appeler MembreSingleton pour obtenir la liste des membres
+		// listMembres = MembreSingleton.getInstance().getListMembres();
+		MembreDao membreDao = new MembreDaoImpl();
+		listMembres = membreDao.getAll();
+	}
+
+	public List<MembreDto> getListMembres() {
+		return listMembres;
+	}
+
+	public void setListMembres(List<MembreDto> listMembres) {
+		this.listMembres = listMembres;
+	}
+
+	public MembreDto getMembreCourant() {
+		return membreCourant;
+	}
+
+	public void setMembreCourant(MembreDto membreCourant) {
+		this.membreCourant = membreCourant;
+	}
+
+	public void onSelect(MembreDto membreSelectionne) {
+		System.out.println("Sélection d'un rôle " + membreSelectionne);
+		this.membreCourant = membreSelectionne;
+	}
+}

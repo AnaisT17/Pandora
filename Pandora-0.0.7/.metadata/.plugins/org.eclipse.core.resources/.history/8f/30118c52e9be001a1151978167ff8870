@@ -1,0 +1,8 @@
+package fr.seedle.pandora.interfaces;
+
+public interface Objectif extends Pandora {
+
+	public String getDescription();
+
+	public void setDescription(String description);
+}

@@ -1,0 +1,36 @@
+package fr.seedle.pandora.interfaces;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+public interface Faction extends Pandora {
+
+	public String getDescription();
+
+	public void setDescription(String description);
+
+	public String getDressCode();
+
+	public void setDessCode(String dressCode);
+
+	public Set<Equipe> getListEquipes();
+
+	public void setListEquipes(Set<Equipe> listEquipes);
+
+	public LocalDateTime getDateHeureDebut();
+
+	public void setDateHeureDebut(LocalDateTime dateHeureDebut);
+
+	public LocalDateTime getDateHeureFin();
+
+	public void setDateHeureFin(LocalDateTime dateHeureFin);
+
+	public String getLongitudeInsertion();
+
+	public void setLongitudeInsertion(String longitudeInsertion);
+
+	public String getLatitudeInsertion();
+
+	public void setLatitudeInsertion(String latitudeInsertion);
+
+}

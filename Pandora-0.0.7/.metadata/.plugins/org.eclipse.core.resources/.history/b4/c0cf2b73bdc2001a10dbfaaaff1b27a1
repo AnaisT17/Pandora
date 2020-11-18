@@ -1,0 +1,40 @@
+package fr.seedle.pandora.singleton;
+
+import fr.seedle.pandora.data.Datas;
+import fr.seedle.pandora.dto.RoleDto;
+
+public class DataSingleton {
+
+	private static DataSingleton roleSingleton;
+
+	private Datas datas;
+
+	public static DataSingleton getInstance() {
+		if (roleSingleton == null) {
+			roleSingleton = new DataSingleton();
+		}
+		return roleSingleton;
+	}
+
+	public DataSingleton() {
+
+	}
+
+	public RoleDto getRoleByNom(String nom) {
+		for (RoleDto role : listRoles) {
+			if (role.getNom().equals(nom)) {
+				return role;
+			}
+		}
+		return null;
+	}
+
+	public Datas getDatas() {
+		return datas;
+	}
+
+	public void setDatas(Datas datas) {
+		this.datas = datas;
+	}
+
+}

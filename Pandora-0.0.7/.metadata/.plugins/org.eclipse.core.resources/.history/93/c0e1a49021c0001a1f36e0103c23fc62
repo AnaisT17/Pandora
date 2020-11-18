@@ -1,0 +1,15 @@
+package fr.seedle.pandora.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
+import fr.seedle.pandora.interfaces.dto.Role;
+
+@Entity(name = "RoleDto")
+@Table(name = "role")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class RoleDto extends PandoraObjectDto implements Role {
+
+}

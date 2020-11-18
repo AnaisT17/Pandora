@@ -1,0 +1,27 @@
+package fr.seedle.pandora.interfaces;
+
+import java.util.Set;
+
+public interface Equipe implements Pandora{
+
+	public String getBlason();
+
+	public void setBlason(String blason);
+
+	public String getNom();
+
+	public void setNom();
+
+	public String getLocalisation();
+
+	public void setLocalisation();
+
+	public Set<Membre> getListMembres();
+
+	public void setListMembres(Set<Membre> listMembres);
+
+	public String getDescription();
+
+	public void setDescription(String description);
+
+}

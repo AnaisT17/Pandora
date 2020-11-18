@@ -1,0 +1,10 @@
+package fr.seedle.pandora.interfaces;
+
+public interface Faction {
+
+	public String getNom();
+	
+	public void setNom(String nom);
+	
+	
+}

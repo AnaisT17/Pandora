@@ -1,0 +1,5 @@
+package fr.seedle.pandora.interfaces.dto;
+
+public class DressCode extends PandoraObject {
+
+}

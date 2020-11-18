@@ -1,0 +1,34 @@
+package fr.seedle.pandora.dto;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import fr.seedle.pandora.interfaces.dto.PandoraObject;
+
+public class PandoraObjectDto implements PandoraObject {
+
+	@Id
+	@GeneratedValue
+	private long id;
+
+	@Column
+	private String nom;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+}

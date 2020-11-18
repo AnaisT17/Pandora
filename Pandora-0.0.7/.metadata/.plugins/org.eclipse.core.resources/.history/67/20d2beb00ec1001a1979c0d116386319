@@ -1,0 +1,16 @@
+package fr.seedle.pandora.view;
+
+import java.util.List;
+
+import fr.seedle.pandora.dao.EquipeDaoImpl;
+import fr.seedle.pandora.interfaces.dao.EquipeDao;
+import fr.seedle.pandora.interfaces.dto.Equipe;
+
+public class EquipeView {
+
+	public List<Equipe> getListEquipes() {
+		final EquipeDao equipeDao = new EquipeDaoImpl();
+		return equipeDao.getAll();
+	}
+
+}

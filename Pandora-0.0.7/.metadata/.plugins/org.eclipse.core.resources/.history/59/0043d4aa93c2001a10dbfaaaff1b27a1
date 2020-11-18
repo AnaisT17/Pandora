@@ -1,0 +1,36 @@
+<html>
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
+<f:view>
+	<head>
+<meta charset="UTF-8">
+<title>Gestion des roles</title>
+	</head>
+	<body>
+
+		<h1>
+			<h:outputText
+				value="#{loginBean.membreCourant.prenom} #{loginBean.membreCourant.nom}" />
+			votre gestion de roles
+		</h1>
+
+		<h:form>
+			<h:dataTable value="#{roleControllerListBean.listRoles}" var="role">
+
+				<h:column>
+					<f:facet name="header">Role</f:facet>
+					<h:outputText value="#{role.nom}" />
+					<h:commandButton value="Sélectionner"
+						actionListener="#{roleControllerListBean.onSelect(role)}" />
+				</h:column>
+
+			</h:dataTable>
+
+			<h3>
+				Vous êtes
+				<h:outputText value="#{roleControllerListBean.role.nom}" />
+			</h3>
+		</h:form>
+	</body>
+</f:view>
+</html>

@@ -1,0 +1,7 @@
+package fr.seedle.pandora.interfaces;
+
+public interface Lieu implements Pandora{
+
+	
+	
+}

@@ -1,0 +1,13 @@
+package fr.seedle.pandora.interfaces;
+
+public interface OperationRole {
+
+	public Operation getOperation();
+
+	public void setOperation(Operation operation);
+
+	public String getNom();
+
+	public void setNom(String nom);
+
+}

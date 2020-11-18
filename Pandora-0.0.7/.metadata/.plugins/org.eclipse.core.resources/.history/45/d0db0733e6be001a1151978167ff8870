@@ -1,0 +1,30 @@
+package fr.seedle.pandora.interfaces;
+
+import java.time.LocalDateTime;
+
+public interface Membre {
+	
+	public String getAvatar();
+
+	public void setAvatar(String avatar);
+
+	public String getNom();
+
+	public void setNom();
+
+	public String getPrenom();
+
+	public void setPrenom();
+
+	public String getPseudo();
+
+	public void setPseudo();
+
+	public LocalDateTime getDateNaissance();
+
+	public void setDateNaissance();
+	
+	public boolean isLeader();
+
+	public void setLeader(boolean isLeader);
+}

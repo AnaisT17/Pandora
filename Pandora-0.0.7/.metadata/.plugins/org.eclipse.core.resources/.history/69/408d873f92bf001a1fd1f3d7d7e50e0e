@@ -1,0 +1,120 @@
+package fr.seedle.pandora.dto;
+
+import java.util.Date;
+
+import fr.seedle.pandora.interfaces.dto.Membre;
+import fr.seedle.pandora.interfaces.dto.Role;
+
+public class MembreDto  extends PandoraObjectDto implements Membre {
+
+	
+
+	@Override
+	public String getAvatar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAvatar(String avatar) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getPrenom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setPrenom(String prenom) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getPseudo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setPseudo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getLogin() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setLogin(String login) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setEmail(String email) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getMobile() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setMobile(String mobile) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Date getDateNaissance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDateNaissance(Date dateNaissance) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isLeader() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setLeader(boolean isLeader) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Role getRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setRole(Role role) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

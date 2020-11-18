@@ -1,0 +1,13 @@
+package fr.seedle.pandora.singleton;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class PandoraSession {
+
+	public PandoraSession(HttpServletRequest request) {
+
+		request.getSession();
+
+	}
+
+}

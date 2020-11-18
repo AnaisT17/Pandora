@@ -1,0 +1,56 @@
+package fr.seedle.pandora.singleton;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import fr.seedle.pandora.dto.MembreDto;
+
+public class BadSession {
+
+	MembreDto membreConnecter;
+
+	public BadSession(HttpServletRequest request, HttpServletResponse response) {
+
+		String userName = request.getParameter("user_name");
+
+		final MembreDto membre = UtilisateurSingleton.getInstance().getMembreByLogin(userName);
+		if (membre != null) {
+			setMembreConnecter(membre);
+			UtilisateurSingleton.getInstance().getMapMembreConnecter().put(userName, this);
+
+			Cookie MonCookie = new Cookie("user_name", userName);
+			response.addCookie(MonCookie);
+		}
+
+		System.out.println("membre : " + membre);
+
+	}
+
+	public static BadSession getSession(HttpServletRequest request) throws Exception {
+		String login = null;
+		final Cookie[] cookies = request.getCookies();
+		for (int i = 0; i < cookies.length; i++) {
+			Cookie cookie = cookies[i];
+			System.out.println("Cookie " + cookie.getName() + ", " + cookie.getValue() + ", " + cookie.getDomain());
+			if (cookie.getName().equals("user_name")) {
+				login = cookie.getValue();
+			}
+		}
+
+		if (login == null) {
+			throw new Exception("impossible de trouver l'utilisateur");
+		}
+		final BadSession bs = UtilisateurSingleton.getInstance().getMapMembreConnecter().get(login);
+		return bs;
+	}
+
+	public MembreDto getMembreConnecter() {
+		return membreConnecter;
+	}
+
+	public void setMembreConnecter(MembreDto membreConnecter) {
+		this.membreConnecter = membreConnecter;
+	}
+
+}

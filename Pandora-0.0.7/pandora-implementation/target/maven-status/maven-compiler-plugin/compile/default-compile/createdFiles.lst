@@ -1,0 +1,12 @@
+fr/seedle/pandora/dao/RoleDaoImpl.class
+fr/seedle/pandora/dao/RelationFactionEquipeDaoImpl.class
+fr/seedle/pandora/dao/OperationRoleDaoImpl.class
+fr/seedle/pandora/dao/FactionDaoImpl.class
+fr/seedle/pandora/dao/OperationDaoImpl.class
+fr/seedle/pandora/hibernate/HibernateConfiguration.class
+fr/seedle/pandora/dao/EquipeDaoImpl.class
+fr/seedle/pandora/launcher/ApplicationLauncher.class
+fr/seedle/pandora/dao/MembreDaoImpl.class
+fr/seedle/pandora/dao/LieuDaoImpl.class
+fr/seedle/pandora/dao/ObjectifDaoImpl.class
+fr/seedle/pandora/singleton/HibernateSingleton.class

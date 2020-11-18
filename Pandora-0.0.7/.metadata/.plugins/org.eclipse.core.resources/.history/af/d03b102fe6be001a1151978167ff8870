@@ -1,0 +1,19 @@
+package fr.seedle.pandora.interfaces;
+
+import java.util.Set;
+
+public interface Faction {
+
+	public String getNom();
+
+	public void setNom(String nom);
+
+	public String getDescription();
+
+	public void setDescription(String description);
+
+	public Set<Equipe> getListEquipes();
+
+	public void setListEquipes(Set<Equipe> listEquipes);
+
+}

@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="fr.seedle.pandora.singleton.*"%>
+<%@ page import="fr.seedle.pandora.dto.*"%>
+<%@ include file="pandora/jspf/Header.jspf"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bienvenue</title>
+</head>
+<%
+	//final PandoraBean bean = PandoraSession.getBean(request);
+if (request.getParameter("user_name") != null) {
+	final String userName = request.getParameter("user_name");
+	if (userName != null) {
+		MembreDto membre = UtilisateurSingleton.getInstance().getMembreByLogin(userName);
+		if (membre != null) {
+	pandoraBean.setMembreConnecter(membre);
+		}
+	}
+%><jsp:forward page="MainpageWithBean.jsp"></jsp:forward>
+<%
+	} else {
+%><h1>Bienvenue sur Pandora belle Inconnue !</h1>
+<%
+	}
+%>
+
+<body>
+	<form action="login.jsp">
+		<ul>
+			<li><label>veuillez saisir votre nom</label> <input type="text"
+				value="" name="user_name" /></li>
+			<li><label>veuillez saisir votre mot de passe</label> <input
+				type="text" value="" name="user_pass" /></li>
+		</ul>
+		<input type="submit" value="me connecter" />
+	</form>
+
+</body>
+</html>

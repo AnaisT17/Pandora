@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bienvenue</title>
+</head>
+
+<%
+	if (request.getParameter("user_name") != null) {
+		final String userName = request.getParameter("user_name");
+		final String userPass = request.getParameter("user_pass");
+		%><jsp:forward page="Mainpage.jsp?user_name=<%=userName%>"></jsp:forward><%
+	} else {
+		%><h1>Bienvenue sur Pandora belle Inconnue !</h1><%
+	}
+%>
+
+<body>
+	<form action="login.jsp">
+		<ul>
+			<li><label>veuillez saisir votre nom</label> <input type="text"
+				value="" name="user_name" /></li>
+			<li><label>veuillez saisir votre mot de passe</label> <input
+				type="text" value="" name="user_pass" /></li>
+		</ul>
+		<input type="submit" value="me connecter" />
+	</form>
+
+</body>
+</html>

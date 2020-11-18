@@ -1,0 +1,16 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import fr.seedle.pandora.interfaces.dto.Equipe;
+import fr.seedle.pandora.interfaces.dto.Objectif;
+
+public interface ObjectifDao {
+
+	public Equipe getInstance();
+
+	public void insert(Objectif objectif);
+
+	public void update(Objectif objectif);
+
+	public void delete(Objectif objectif);
+
+}

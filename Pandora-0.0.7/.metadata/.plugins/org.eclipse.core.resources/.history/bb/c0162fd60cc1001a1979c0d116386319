@@ -1,0 +1,41 @@
+package fr.seedle.pandora.dao;
+
+import java.util.List;
+
+import fr.seedle.pandora.dto.EquipeDto;
+import fr.seedle.pandora.interfaces.dao.EquipeDao;
+import fr.seedle.pandora.interfaces.dto.Equipe;
+
+public class EquipeDaoImpl implements EquipeDao {
+
+	@Override
+	public EquipeDto getInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insert(Equipe equipe) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Equipe equipe) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Equipe equipe) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<EquipeDto> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

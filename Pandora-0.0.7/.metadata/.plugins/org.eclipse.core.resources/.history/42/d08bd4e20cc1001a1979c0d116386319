@@ -1,0 +1,20 @@
+package fr.seedle.pandora.interfaces.dao;
+
+import java.util.List;
+
+import fr.seedle.pandora.dto.EquipeDto;
+import fr.seedle.pandora.interfaces.dto.Equipe;
+
+public interface EquipeDao {
+
+	public EquipeDto getInstance();
+
+	public void insert(Equipe equipe);
+
+	public void update(Equipe equipe);
+
+	public void delete(Equipe equipe);
+
+	public List<EquipeDto> getAll();
+
+}

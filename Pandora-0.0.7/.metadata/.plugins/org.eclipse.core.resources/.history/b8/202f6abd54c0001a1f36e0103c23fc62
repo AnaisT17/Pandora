@@ -1,0 +1,26 @@
+package fr.seedle.pandora.singleton;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import fr.seedle.pandora.dto.MembreDto;
+
+public class BadSession {
+
+	MembreDto membreConnecter;
+
+	public BadSession(HttpServletRequest request, HttpServletResponse response) {
+		Cookie MonCookie = new Cookie("user_name", request.getParameter("user_name"));
+		response.addCookie(MonCookie);
+	}
+
+	public MembreDto getMembreConnecter() {
+		return membreConnecter;
+	}
+
+	public void setMembreConnecter(MembreDto membreConnecter) {
+		this.membreConnecter = membreConnecter;
+	}
+
+}

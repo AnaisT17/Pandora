@@ -1,0 +1,32 @@
+package fr.seedle.pandora.dao;
+
+import fr.seedle.pandora.dto.RoleDto;
+import fr.seedle.pandora.interfaces.dao.RoleDao;
+import fr.seedle.pandora.interfaces.dto.Role;
+
+public class RoleDaoImpl implements RoleDao {
+
+	@Override
+	public Role getInstance() {
+		return new RoleDto();
+	}
+
+	@Override
+	public void insert(Role role) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Role role) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(Role role) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
